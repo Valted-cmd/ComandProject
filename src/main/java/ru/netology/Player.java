@@ -26,6 +26,9 @@ public class Player {
      * если игра уже была, никаких изменений происходить не должно
      */
     public void installGame(Game game) {
+        if (playedTime.containsKey(game)) {
+            return;
+        }
         playedTime.put(game, 0);
     }
 
