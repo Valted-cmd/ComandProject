@@ -31,7 +31,6 @@ public class GameStore {
         return games.contains(game);
     }
 
-
     /**
      * Регистрирует количество времени, которое проиграл игрок
      * за игрой этого каталога. Игрок задаётся по имени. Время должно
@@ -51,6 +50,7 @@ public class GameStore {
      * времени. Если игроков нет, то возвращется null
      */
     public String getMostPlayer() {
+        // Исправила код, добавила поиск игрока, игравшего максимальное время
         int mostTime = 1;
         String bestPlayer = null;
         if (!playedTime.isEmpty()) {
