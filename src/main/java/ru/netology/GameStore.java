@@ -27,7 +27,7 @@ public class GameStore {
      * если игра есть и false иначе
      */
     public boolean containsGame(Game game) {
-
+        // Упрощение кода и исправление
         return games.contains(game);
     }
 
@@ -38,8 +38,9 @@ public class GameStore {
      * суммироваться с прошлым значением для этого игрока
      */
     public void addPlayTime(String playerName, int hours) {
+        // Добавление суммирования часов
         if (playedTime.containsKey(playerName)) {
-            playedTime.put(playerName, playedTime.get(playerName));
+            playedTime.put(playerName, playedTime.get(playerName) + hours);
         } else {
             playedTime.put(playerName, hours);
         }
@@ -68,6 +69,14 @@ public class GameStore {
      * за играми этого каталога
      */
     public int getSumPlayedTime() {
-        return 0;
+        // Добавила суммирование времени всех игроков в игре
+        int sum = 0;
+        for (int hour : playedTime.values()) {
+            sum += hour;
+        }
+        return sum;
     }
 }
+
+
+
